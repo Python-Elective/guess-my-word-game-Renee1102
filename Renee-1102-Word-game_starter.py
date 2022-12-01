@@ -46,14 +46,13 @@ def is_word_guessed(secret_word, letters_guessed):
 secret_word = random(word_list)
 letters_guessed = input(range(list))
 list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-for i in range(list):
-    letters_guessed = i 
-    True if secret_word == letters_guessed else False
-    print(is_word_guessed(secret_word, letters_guessed))
-    
-
-
-
+for letters_guessed in range(list):
+  for letters in secret_word:
+    if letters in secret_word == letters_guessed:
+      True 
+    else:
+        False  
+print(is_word_guessed(secret_word, letters_guessed))
 
 
 ### Testcases
