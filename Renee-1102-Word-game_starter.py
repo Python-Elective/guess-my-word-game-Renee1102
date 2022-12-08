@@ -107,6 +107,15 @@ def get_available_letters(letters_guessed):
     '''
     # FILL IN YOUR CODE HERE...   
     pass
+    available_letters = ''
+    import string 
+    print(string.ascii_lowercase)
+    for letter in available_letters:
+      if letter not in letters_guessed:
+        available_letters.append(letter)
+    ''.join(available_letters)
+    return available_letters
+
 
 
 
