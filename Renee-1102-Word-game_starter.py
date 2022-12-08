@@ -43,20 +43,24 @@ def is_word_guessed(secret_word, letters_guessed):
     '''
     # FILL IN YOUR CODE HERE...
     pass
-secret_word = random(word_list)
-letters_guessed = input(range(list))
-list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-for letters_guessed in range(list):
-  for letters in secret_word:
-    if letters in secret_word == letters_guessed:
-      True 
-    else:
-        False  
-print(is_word_guessed(secret_word, letters_guessed))
+  #secret_word = random(word_list)
+  #letters_guessed = input(range(list))
+  #list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+#      
 
+
+    for letter in secret_word:
+        if letter not in letters_guessed:
+          return False
+
+    return True
 
 ### Testcases
-# print(is_word_guessed('apple', ['a', 'e', 'i', 'k', 'p', 'r', 's']))
+secret_word = 'renee'
+letters_guessed = ['e', 'f', 'r', 'n', 'o']
+print(is_word_guessed(secret_word, letters_guessed))
+
+#print(is_word_guessed('apple', ['a', 'e', 'i', 'k', 'p', 'r', 's']))
 # print(is_word_guessed('durian', ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']))
 # print(is_word_guessed('pineapple', []))
 
@@ -71,7 +75,14 @@ def get_guessed_word(secret_word, letters_guessed):
     '''
     # FILL IN YOUR CODE HERE...
     pass
-    
+  # output_list = []
+  # for letter in secret_word:
+  #   if letter in range(letters_guessed):
+  #     output_list = output_list + letter  
+  #   else:
+  #     '_'.join(output_list) 
+
+
     
     
       
