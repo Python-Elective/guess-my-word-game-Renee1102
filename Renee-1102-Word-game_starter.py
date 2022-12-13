@@ -42,7 +42,7 @@ def is_word_guessed(secret_word, letters_guessed):
       False otherwise
     '''
     # FILL IN YOUR CODE HERE...
-    pass
+  
   #secret_word = random(word_list)
   #letters_guessed = input(range(list))
   #list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -74,20 +74,20 @@ def get_guessed_word(secret_word, letters_guessed):
       what letters in secret_word have been guessed so far.
     '''
     # FILL IN YOUR CODE HERE...
-    pass
+  
     output_string = ''
     for letter in secret_word:
-     if letter in letters_guessed:
-       output_string = output_string + letter  
-     else:
-       '_'.join(output_string)
-       return output_string 
+       if letter in letters_guessed:
+         output_string = output_string + letter  
+       else:
+        '_'.join(output_string)
+        return output_string 
     output_list = []
     for letter in secret_word:
-      if letter in letters_guessed:
-        output_list.append(letter)
-      else:
-        output_list.append('_')
+        if letter in letters_guessed:
+          output_list.append(letter)
+        else:
+          output_list.append('_')
     ''.join(output_list)
     output_list == output_string
     return output_string
@@ -106,7 +106,7 @@ def get_available_letters(letters_guessed):
       yet been guessed.
     '''
     # FILL IN YOUR CODE HERE...   
-    pass
+  
     available_letters = ''
     import string 
     print(string.ascii_lowercase)
