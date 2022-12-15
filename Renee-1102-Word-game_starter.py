@@ -88,7 +88,7 @@ def get_guessed_word(secret_word, letters_guessed):
           output_list.append(letter)
         else:
           output_list.append('_')
-          ''.join(output_list)
+          '_'.join(output_list)
     output_list == output_string
     return output_string
 
