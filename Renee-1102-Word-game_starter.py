@@ -88,7 +88,7 @@ def get_guessed_word(secret_word, letters_guessed):
           output_list.append(letter)
         else:
           output_list.append('_')
-          '_'.join(output_list)
+          ''.join(output_list)
     output_list == output_string
     return output_string
 
@@ -97,7 +97,7 @@ def get_guessed_word(secret_word, letters_guessed):
       
 #Testcases
 #print(get_guessed_word('apple', ['e', 'i', 'k', 'p', 'r', 's']))
-# print(get_guessed_word('durian', ['a', 'c', 'd', 'h', 'i', 'm', 'n', 'r', 't', 'u']))
+#print(get_guessed_word('durian', ['a', 'c', 'd', 'h', 'i', 'm', 'n', 'r', 't', 'u']))
 
 def get_available_letters(letters_guessed):
     '''
