@@ -80,7 +80,7 @@ def get_guessed_word(secret_word, letters_guessed):
        if letter in letters_guessed:
          output_string = output_string + letter  
        else:
-        '_'.join(output_string)
+        '_' + letter in output_string
         return output_string 
     output_list = []
     for letter in secret_word:
@@ -88,7 +88,7 @@ def get_guessed_word(secret_word, letters_guessed):
           output_list.append(letter)
         else:
           output_list.append('_')
-    ''.join(output_list)
+          '_'.join(output_list)
     output_list == output_string
     return output_string
 
@@ -107,13 +107,12 @@ def get_available_letters(letters_guessed):
     '''
     # FILL IN YOUR CODE HERE...   
   
-    available_letters = ''
-    import string 
-    print(string.ascii_lowercase)
+    import string
+    available_letters = print(string.ascii_lowercase)
     for letter in available_letters:
-      if letter not in letters_guessed:
-        available_letters.append(letter)
-    ''.join(available_letters)
+        if letter not in letters_guessed:
+          available_letters.append(letter)
+          ''.join(available_letters)
     return available_letters
 
 
