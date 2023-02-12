@@ -136,7 +136,30 @@ def game_loop(secret_word):
     Follows the other limitations detailed in the problem write-up.
     '''
     # FILL IN YOUR CODE HERE...
-    pass
+    print("Welcome to the word guessing game")
+    print("Guess a word with a length of " + str(len(secret_word)))
+    letters_guessed = []
+    letter_guessed = input("Enter a lower case letter to start guessing:" )
+    times_to_guess = 5
+
+    while times_to_guess > 5:
+      print(str(times_to_guess) + "times to guess")
+      print("Here's your available letters: " + get_available_letters)
+      letters_guessed = input("Enter a lower case letter to start guessing: ")
+      if letters_guessed in secret_word:
+        print("Correct, this is your current guess" + get_guessed_word)
+      else:
+        times_to_guess =- 1
+        print("guess again" + get_guessed_word)
+      if is_word_guessed(secret_word, letters_guessed):
+        print("YOU WON")
+        break
+    
+    if times_to_guess == 0:
+      print("TRY AGAIN, YOU LOSE")
+
+
+
 
 
 
