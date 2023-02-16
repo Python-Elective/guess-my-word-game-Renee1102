@@ -80,17 +80,10 @@ def get_guessed_word(secret_word, letters_guessed):
        if letter in letters_guessed:
          output_string += letter  
        else:
-        output_string += '_'
-        return output_string 
-    output_list = []
-    for letter in secret_word:
-        if letter in letters_guessed:
-          output_list.append(letter)
-        else:
-          output_list.append('_')
-          output_string = '_'.join(output_list)
-    output_list == output_string
-    return output_string
+        output_string += '_ '
+    
+    return output_string 
+
 
     
     
@@ -108,13 +101,11 @@ def get_available_letters(letters_guessed):
     # FILL IN YOUR CODE HERE...   
   
     import string
-    available_letters = list(string.ascii_lowercase)
-    for letter in available_letters:
+    available_letters = ''
+    for letter in string.ascii_lowercase:
         if letter not in letters_guessed:
-          available_letters.append(letter)
-          ''.join(available_letters)
+            available_letters += letter
     return available_letters
-
 
 
 
@@ -139,7 +130,7 @@ def game_loop(secret_word):
     # FILL IN YOUR CODE HERE...
     
     letters_guessed = []
-    times_to_guess = 6
+    times_to_guess = 8
     print("Welcome to the word guessing game")
     print("Guess a word with a length of " + str(len(secret_word)) + " letters")
     while times_to_guess > 0:
@@ -175,7 +166,7 @@ def game_loop(secret_word):
 
 def main():
     secret_word = choose_word(word_list)
-    game_loop(secret_word)
+    game_loop('book')
 
 # Testcases
 # you might want to pick your own
