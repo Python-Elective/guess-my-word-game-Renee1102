@@ -78,9 +78,9 @@ def get_guessed_word(secret_word, letters_guessed):
     output_string = ''
     for letter in secret_word:
        if letter in letters_guessed:
-         output_string = output_string + letter  
+         output_string += letter  
        else:
-        '_' + letter in output_string
+        output_string += '_'
         return output_string 
     output_list = []
     for letter in secret_word:
@@ -88,7 +88,7 @@ def get_guessed_word(secret_word, letters_guessed):
           output_list.append(letter)
         else:
           output_list.append('_')
-          '_'.join(output_list)
+          output_string = '_'.join(output_list)
     output_list == output_string
     return output_string
 
@@ -108,12 +108,13 @@ def get_available_letters(letters_guessed):
     # FILL IN YOUR CODE HERE...   
   
     import string
-    available_letters = print(string.ascii_lowercase)
+    available_letters = list(string.ascii_lowercase)
     for letter in available_letters:
         if letter not in letters_guessed:
           available_letters.append(letter)
           ''.join(available_letters)
     return available_letters
+
 
 
 
@@ -136,27 +137,35 @@ def game_loop(secret_word):
     Follows the other limitations detailed in the problem write-up.
     '''
     # FILL IN YOUR CODE HERE...
-    print("Welcome to the word guessing game")
-    print("Guess a word with a length of " + str(len(secret_word)))
+    
     letters_guessed = []
-    letter_guessed = input("Enter a lower case letter to start guessing:" )
-    times_to_guess = 5
-
-    while times_to_guess > 5:
-      print(str(times_to_guess) + "times to guess")
-      print("Here's your available letters: " + get_available_letters)
-      letters_guessed = input("Enter a lower case letter to start guessing: ")
-      if letters_guessed in secret_word:
-        print("Correct, this is your current guess" + get_guessed_word)
+    times_to_guess = 6
+    print("Welcome to the word guessing game")
+    print("Guess a word with a length of " + str(len(secret_word)) + " letters")
+    while times_to_guess > 0:
+      guess = input("Enter a lower case letter to start guessing: ")
+      print("You have " + str(times_to_guess) + " more guesses")
+      print("Available letters: " + get_available_letters(letters_guessed))
+      if guess in letters_guessed:
+        print("You've gussed this letter already, try again")
+        continue
+      letters_guessed.append(guess)
+      print(str(times_to_guess) + " more times to guess")
+      print(get_guessed_word(secret_word, letters_guessed))
+      print("Here's your available letters: " + get_available_letters(letters_guessed))
+      if guess in secret_word:
+        print("Correct, this letter is found in your secret word")
       else:
-        times_to_guess =- 1
-        print("guess again" + get_guessed_word)
+        times_to_guess -= 1
+        print("Guess again, this letter is not found in secret word")
       if is_word_guessed(secret_word, letters_guessed):
         print("YOU WON")
         break
+
     
     if times_to_guess == 0:
       print("TRY AGAIN, YOU LOSE")
+      print("The secret word was " + secret_word + ".")
 
 
 
